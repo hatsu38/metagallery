@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180717053820) do
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.string "url"
+    t.string "domain"
     t.string "title"
     t.text "description"
     t.string "favicon"

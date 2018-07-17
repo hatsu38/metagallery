@@ -16,7 +16,7 @@
             <% service.keywords.each do |keyword|  %>
               <span class="chip"><%= keyword.name %></span>
             <% end %>
-            <p>[HP]:<a href="<%= service.url%>">公式HP</a></p>
+            <p class="domain"><a href="<%= service.url%>" target="_blank"><%= service.domain %></a></p>
           </div>
         </div>
       </div>

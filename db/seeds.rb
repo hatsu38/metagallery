@@ -14,6 +14,7 @@ CSV.foreach(csv_file,headers: true) do |data|
   Service.create(
     name: data[0],
     url: data[1],
+    domain: data[10],
     title: data[9],
     description: data[5],
     favicon: data[2],
@@ -30,8 +31,8 @@ CSV.foreach(keyword_service_file,headers: true) do |data|
     name: data[0]
   )
   ServiceKeyword.create(service_id: data[1],keyword_id: word.id) if data[1]
-  ServiceKeyword.create(service_id: data[1],keyword_id: word.id) if data[2]
-  ServiceKeyword.create(service_id: data[1],keyword_id: word.id) if data[3]
+  ServiceKeyword.create(service_id: data[2],keyword_id: word.id) if data[2]
+  ServiceKeyword.create(service_id: data[3],keyword_id: word.id) if data[3]
 end
 
 

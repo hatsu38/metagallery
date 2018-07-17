@@ -71,6 +71,13 @@ header{
             line-height:normal;
             padding: 4px 5px;
             font-size: 8px;
+            margin-right: 0;
+          }
+          .domain{
+            text-align:right;
+            a{
+              color: #8899A6;
+            }
           }
         }
       }

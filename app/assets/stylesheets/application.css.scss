@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+header{
+  background-color:#6b7ee5;
+  color: #fff;
+  height: 55px;
+  // padding: 2em auto;
+  h1{
+    margin:0 auto;
+    line-height:55px;
+    font-size: 2.8em;
+    text-align: center;
+  }
+}
+
+#service_index{
+  .service{
+    padding: 0;
+    .service_block{
+      margin: .3em;
+      .row.service_name_block{
+        margin:0 0 .1em;
+        .service_name{
+          font-size: 1.1em;
+          margin: .2em auto;
+        }
+      }
+      .card{
+        margin-top:0;
+        .thumbnail{
+          max-width: 100%;
+          border-bottom: 1px solid #ccc;
+          .ogp_img{
+            max-width: 100%;
+          }
+        }
+        .card-content{
+          padding: 5px;
+          p{
+            word-break: break-all;
+            margin: .2em auto;
+            color: #292F33;
+          }
+          .service_title{
+            font-weight: bold;
+            font-size: 1em;
+            line-height:1.5em;
+          }
+          .description{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 6;
+            overflow: hidden;
+          }
+          .chip{
+            height: auto;
+            line-height:normal;
+            padding: 4px 5px;
+            font-size: 8px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div class="row" id="service_index">
+  <% @services.each do |service| %>
+    <div class="col s6 service">
+      <div class="service_block">
+        <div class="card">
+          <div class="row service_name_block">
+            <img src="<%= service.favicon %>" class="col s3">
+            <h3 class="col s9 service_name"><%= service.name %></h3>
+          </div>
+          <div class="thumbnail card-image">
+            <img src="<%= service.ogpimg %>" class="ogp_img">
+          </div>
+          <div class="card-content">
+            <p class="service_title card-title"><%= service.title %></p>
+            <p class="description"><%= service.description %></p>
+            <% service.keywords.each do |keyword|  %>
+              <span class="chip"><%= keyword.name %></span>
+            <% end %>
+            <p>[HP]:<a href="<%= service.url%>">公式HP</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

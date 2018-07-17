@@ -28,8 +28,14 @@ header{
 }
 
 #service_index{
+  width: 94%;
+  margin: 0 auto;
+  column-count: 2;
   .service{
     padding: 0;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
     .service_block{
       margin: .3em;
       .row.service_name_block{

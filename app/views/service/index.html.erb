@@ -1,3 +1,32 @@
+<div id="request_ajax_update" >
+  <%= form_tag(service_metaget_path, method: :post, remote: true, class: "row") { %>
+    <%= text_field :data, :text ,:class => "col s9" %>
+    <%= submit_tag '調べる' ,:class => "btn col s3" %>
+  <% } %>
+</div>
+
+<div id="example_ogp" class="service">
+  <div class="service_block">
+    <div class="card">
+      <div class="row service_name_block">
+        <img src="assets/noimage.png" class="col s2">
+        <h3 class="col s10 service_name">MetaGallery</h3>
+      </div>
+      <div class="thumbnail card-image">
+        <img src="assets/noimage.png" class="ogp_img">
+      </div>
+      <div class="card-content">
+        <p class="service_title card-title">MetaGallery</p>
+        <p class="description">MetaGalleryです。</p>
+        <span class="chip">MetaGallery</span>
+        <span class="chip">メタギャラリー</span>
+        <p class="domain"><a href="http://www.metagallery.jp/" target="_blank">www.metagallery.jp</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div id="service_index">
   <% @services.each do |service| %>
     <div class="grid service">

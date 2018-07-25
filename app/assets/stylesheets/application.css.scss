@@ -14,6 +14,10 @@
  *= require_self
  */
 
+body{
+  background-color:#ebebeb;
+}
+
 header{
   background-color:#6b7ee5;
   color: #fff;
@@ -48,10 +52,12 @@ header{
     }
     .card{
       margin-top:0;
+      border-radius: 4px 4px 0 0;
       .thumbnail{
         max-width: 100%;
         border-bottom: 1px solid #ccc;
         .ogp_img{
+          border-radius: 4px 4px 0 0;
           max-width: 100%;
         }
       }
@@ -82,6 +88,9 @@ header{
         }
         .domain{
           text-align:right;
+          .favicon{
+            width:16px;
+          }
           a{
             color: #8899A6;
           }
@@ -91,10 +100,21 @@ header{
   }
 }
 
-#example_ogp{
-  .card-image{
-    img{
-      height:214px;
+.search_ogp{
+  background-color:#fff;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 0 3px 17px rgba(0, 0, 0, 0.10);
+  #request_ajax_update{
+  }
+  #example_ogp{
+    .card-image{
+      img{
+        height:214px;
+      }
+    }
+    form{
+      text-align:right;
     }
   }
 }

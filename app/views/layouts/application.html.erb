@@ -4,6 +4,7 @@
     <title>MetaGallery</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
@@ -13,8 +14,43 @@
 
   <body>
     <header>
-    <h1>MetaGallery</h1>
+      <h1>MetaGallery</h1>
     </header>
     <%= yield %>
+    <footer>
+      <div class="footer_border_top"></div>
+      <ul class="sns_block row">
+        <li class="col s4">
+          <div class="twitter sns">
+            <a href="https://twitter.com/share?url=https://cafepedia.herokuapp.com/&amp;text=カフェぺディア | あなたの近くにあるカフェがすぐに見つかる" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </li>
+        <li class="col s4">
+          <div class="facebook sns">
+            <a href="https://www.facebook.com/share.php?u=https://cafepedia.herokuapp.com/&amp;t=カフェぺディア | あなたの近くにあるカフェがすぐに見つかる" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+        </li>
+        <li class="col s4">
+          <div class="hatena sns">
+            <a href="http://b.hatena.ne.jp/entry/https://cafepedia.herokuapp.com/" class="hatena-bookmark-button" data-hatena-bookmark-layout="touch" title="このエントリーをはてなブックマークに追加" target="_blank">
+              <i>B!</i>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <div class="info_block">
+        <a href="https://twitter.com/hatsu_38" target="_blank"><i class="fas fa-play-circle"></i>運営者</a>
+        |
+        <a href="https://goo.gl/forms/GLAZMVpeUTnJWgg72" target="_blank"><i class="fas fa-play-circle"></i>リークする</a>
+      </div>
+      <p class="footer_copy">
+      © Copyright 2018 hastu All rights reserved.
+      </p>
+    </footer>
+
   </body>
 </html>

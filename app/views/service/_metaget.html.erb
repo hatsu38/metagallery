@@ -1,4 +1,7 @@
 <div id="example_ogp" class="service">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
   <div class="service_block">
     <div class="card">
       <div class="thumbnail card-image">

@@ -2,7 +2,7 @@
   <div id="request_ajax_update" >
     <%= form_tag(service_metaget_path, method: :post, remote: true, class: "row") { %>
       <%= text_field :data, :text ,:class => "col s9",:placeholder => "https://example.com" %>
-      <%= submit_tag '調べる' ,:class => "btn col s3" %>
+      <%= submit_tag '調べる' ,:class => "btn col s3 search_btn",:disabled => true %>
     <% } %>
   </div>
 

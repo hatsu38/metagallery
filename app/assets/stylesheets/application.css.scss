@@ -108,6 +108,18 @@ header{
   #request_ajax_update{
   }
   #example_ogp{
+    .success{
+     background-color: #cce5ff;
+     color:#004085;
+     border-color: #b8daff;
+     padding: .75rem 1.25rem;
+   }
+    .danger{
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      padding: .75rem 1.25rem;
+    }
     .card-image{
       img{
         height:214px;

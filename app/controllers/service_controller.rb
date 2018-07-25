@@ -6,7 +6,6 @@ class ServiceController < ApplicationController
   def create
     keywords = params[:meta][:keyword]
     @service = Service.new(service_params)
-    binding.pry
     if @service.save
       if keywords
         keywords_ary = keywords.split(" ")
@@ -27,9 +26,20 @@ class ServiceController < ApplicationController
 
   def metaget
     url = params[:data][:text]
-    page = MetaInspector.new(url)
+    begin
+      page = MetaInspector.new(url)
+      flash.now[:success] = "取得しました"
+    rescue
+      flash.now[:danger] = "取得できませんでした"
+      url = "https://example.com/"
+      page = MetaInspector.new(url)
+    end
     meta_keywords = page.meta_tag['name']['keywords']
-    keywords_ary = meta_keywords.split(",") if meta_keywords
+    if meta_keywords
+      keywords_ary = meta_keywords.split(",")
+    else
+      keywords_ary = []
+    end
     if page.images.favicon
       favicon = page.images.favicon
     else
@@ -45,9 +55,10 @@ class ServiceController < ApplicationController
                 :meta_description => page.description,
                 :meta_favicon => favicon,
                 :meta_ogpimg => ogpimg,
-                :meta_keyword => keywords_ary,
+                :meta_keyword =>keywords_ary,
                 :meta_domain => page.host,
     }
+    # binding.pry
     render partial: 'metaget', locals: { :results => results }
   end
 

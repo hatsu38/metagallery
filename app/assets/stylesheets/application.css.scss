@@ -107,7 +107,8 @@ header{
   box-shadow: 0 3px 17px rgba(0, 0, 0, 0.10);
   #request_ajax_update{
   }
-  #example_ogp{
+  #example_ogp,#ogp_result{
+    position: relative;
     .success{
      background-color: #cce5ff;
      color:#004085;
@@ -127,6 +128,13 @@ header{
     }
     form{
       text-align:right;
+    }
+    #loading{
+      display:none;
+      width:100%;
+      text-align:center;
+      position:absolute;
+      top: 20%;
     }
   }
 }

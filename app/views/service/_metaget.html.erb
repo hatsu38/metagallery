@@ -1,4 +1,4 @@
-<div id="example_ogp" class="service">
+<div id="ogp_result" class="service">
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
@@ -22,16 +22,20 @@
   </div>
 </div>
 
-<% unless Service.exists?(:domain=> results[:meta_domain]) %>
+<div id="loading">
+  <img src="loading.gif">
+</div>
+
 <%= form_tag(service_create_path, method: :post) { %>
   <%= hidden_field :service,:name,:value => results[:meta_title] %>
-  <%= hidden_field :service,:url,:value => results[:meta_url]  %>
+  <%= hidden_field :service,:url,:value => results[:meta_url],:id=>"ogp_val"  %>
   <%= hidden_field :service,:domain,:value => results[:meta_domain] %>
   <%= hidden_field :service,:title,:value => results[:meta_title] %>
   <%= hidden_field :service,:description ,:value => results[:meta_description] %>
   <%= hidden_field :service,:favicon,:value => results[:meta_favicon] %>
   <%= hidden_field :service,:ogpimg,:value => results[:meta_ogpimg] %>
   <%= hidden_field :meta,:keyword,:value => results[:meta_keyword] %>
-  <%= submit_tag "追加する",class: 'btn' %>
+  <% unless Service.exists?(:domain=> results[:meta_domain]) %>
+    <%= submit_tag "追加する",class: 'btn' %>
+  <% end %>
 <% } %>
-<% end %>

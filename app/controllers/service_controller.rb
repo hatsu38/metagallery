@@ -45,8 +45,8 @@ class ServiceController < ApplicationController
     else
       favicon = "assets/noimage.png"
     end
-    if page.images.best
-      ogpimg = page.images.best
+    if page.meta['og:image']
+      ogpimg = page.meta['og:image']
     else
       ogpimg = "assets/noimage.png"
     end
@@ -58,7 +58,6 @@ class ServiceController < ApplicationController
                 :meta_keyword =>keywords_ary,
                 :meta_domain => page.host,
     }
-    # binding.pry
     render partial: 'metaget', locals: { :results => results }
   end
 
@@ -66,6 +65,4 @@ class ServiceController < ApplicationController
   def service_params
     params.require(:service).permit(:name,:url,:domain,:title,:description,:favicon,:ogpimg)
   end
-
-
 end

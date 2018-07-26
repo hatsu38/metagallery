@@ -21,16 +21,28 @@ body{
 header{
   background-color:#6b7ee5;
   color: #fff;
-  height: 185px;
+  height: 205px;
+  i{
+    width:100%;
+    text-align:center;
+    font-size:1.6em;
+    margin-top:10px;
+  }
   h1{
     margin:0 auto;
-    line-height:55px;
-    font-size: 2.8em;
+    line-height:35px;
+    font-size: 2.6em;
     text-align: center;
   }
 }
 footer{
   margin: 2.7em auto 0;
+  .ziguzagu_block{
+    text-align:center;
+    img{
+      width:25%;
+    }
+  }
   .footer_border_top{
     width:85%;
     height:3px;

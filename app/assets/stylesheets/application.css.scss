@@ -21,7 +21,7 @@ body{
 header{
   background-color:#6b7ee5;
   color: #fff;
-  height: 55px;
+  height: 185px;
   h1{
     margin:0 auto;
     line-height:55px;
@@ -78,6 +78,20 @@ footer{
   }
 }
 
+h2.gallery{
+  color:#4a4949;
+  text-align:center;
+  margin:5px auto;
+  font-size:28px;
+  font-weight:bold;
+}
+.ziguzagu_block{
+  text-align:center;
+  img{
+    width:15%;
+  }
+}
+
 #service_index{
   width: 94%;
   margin: 0 auto;
@@ -111,6 +125,7 @@ footer{
       }
       .card-content{
         padding: 5px;
+        color: #4a4949;
         p{
           word-break: break-all;
           margin: .2em auto;
@@ -120,6 +135,7 @@ footer{
           font-weight: bold;
           font-size: 1em;
           line-height:1.5em;
+          color: #333;
         }
         .description{
           display: -webkit-box;
@@ -150,10 +166,15 @@ footer{
 
 .search_ogp{
   background-color:#fff;
-  margin: 20px;
+  margin: -120px 20px 20px;
   padding: 10px;
   box-shadow: 0 3px 17px rgba(0, 0, 0, 0.10);
+  border-radius:4px;
   #request_ajax_update{
+    .row{
+      margin-bottom:0;
+      margin-top:15px;
+    }
   }
   #example_ogp,#ogp_result{
     position: relative;

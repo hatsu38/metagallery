@@ -89,11 +89,42 @@ footer{
     margin: .5em auto;
   }
 }
+#keywords_scroll_block{
+  width:94%;
+  margin:0 auto;
+  .chip{
+    background-color:#fff;
+  }
+}
+//
+// #keywords_scroll{
+//   overflow-x: auto;
+//   white-space: nowrap;
+//   padding:8px 0;
+//   .keyword{
+//     white-space: normal;
+//     background-color:#fff;
+//     display: inline-block;
+//     word-break: keep-all;
+//     border-radius:16px;
+//     margin-right:6px;
+//     height:40px;
+//     line-height:40px;
+//     padding: 0 12px;
+//     &:hover {
+//       opacity: 0.9;
+//       a:hover {
+//         opacity: 0.9;
+//       }
+//     }
+//   }
+// }
+//
 
-h2.gallery{
+h2.gallery,h2.keyword_title{
   color:#4a4949;
   text-align:center;
-  margin:5px auto;
+  margin:45px auto 5px;
   font-size:28px;
   font-weight:bold;
 }
@@ -108,9 +139,14 @@ h2.gallery{
   width: 94%;
   margin: 0 auto;
   column-count: 2;
+  text-align:justify;
+  .mix{
+    display:none;
+  }
 }
 
 .service{
+  display:inline-block;
   padding: 0;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;

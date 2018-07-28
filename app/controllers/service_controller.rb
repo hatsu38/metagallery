@@ -1,6 +1,11 @@
 class ServiceController < ApplicationController
   def index
     @services = Service.all.order("created_at DESC")
+    keyword_ary_top10 = ServiceKeyword.group(:keyword_id).order("count_all desc").limit(10).count
+    @keywords = []
+    keyword_ary_top10.each do |keyword|
+      @keywords << Keyword.find_by(id: keyword.first)
+    end
   end
 
   def create

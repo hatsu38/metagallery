@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require turbolinks
+//= require mixitup
 //= require_tree .
 $(function() {
   return $('#request_ajax_update').on('ajax:complete', function(event) {
@@ -36,4 +36,14 @@ $(function() {
       $(".search_btn").prop("disabled", true);
     }
   });
+});
+//
+// $(function() {
+//   $("#keywords_scroll").simplyScroll();
+// });
+//
+
+
+$(function(){
+  $('#service_index').mixItUp();
 });

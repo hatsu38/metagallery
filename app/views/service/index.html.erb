@@ -18,8 +18,8 @@
           <span class="chip">MetaGallery</span>
           <span class="chip">メタギャラリー</span>
           <p class="domain">
-            <img src="assets/noimage.png" class="favicon">
-            <a href="http://www.metagallery.jp/" target="_blank">www.metagallery.jp</a>
+          <img src="assets/noimage.png" class="favicon">
+          <a href="http://www.metagallery.jp/" target="_blank">www.metagallery.jp</a>
           </p>
         </div>
       </div>
@@ -27,13 +27,26 @@
   </div>
 </div>
 
-<h2 class="gallery">ギャラリー</h2>
+<div id="keywords_scroll_block">
+  <h2 class="keyword_title">おすすめキーワード</h2>
   <div class="ziguzagu_block">
     <img src="ziguzagu.png">
   </div>
-<div id="service_index">
+  <ul class="slide simplyScroll" id="keywords_scroll">
+    <li class="chip filter" data-filter="all">全部</li>
+    <% @keywords.each do |keyword| %>
+      <li class="keyword chip filter" data-filter=".<%= keyword.name %>">#<%= keyword.name %></li>
+    <% end %>
+  </ul>
+</div>
+
+<h2 class="gallery">ギャラリー</h2>
+<div class="ziguzagu_block">
+  <img src="ziguzagu.png">
+</div>
+<div id="service_index" class="container">
   <% @services.each do |service| %>
-    <div class="grid service">
+    <div class="mix grid service <%= service.keywords.pluck(:name).join(" ") %>">
       <div class="service_block">
         <div class="card">
           <div class="thumbnail card-image">
@@ -54,4 +67,8 @@
       </div>
     </div>
   <% end %>
+  <div class="gap"></div>
+  <div class="gap"></div>
 </div>
+
+

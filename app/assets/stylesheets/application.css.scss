@@ -41,6 +41,7 @@ footer{
     text-align:center;
     img{
       width:25%;
+      max-width:100px;
     }
   }
   .footer_border_top{
@@ -132,6 +133,7 @@ h2.gallery,h2.keyword_title{
   text-align:center;
   img{
     width:15%;
+    max-width:90px;
   }
 }
 
@@ -140,11 +142,23 @@ h2.gallery,h2.keyword_title{
   margin: 0 auto;
   column-count: 2;
   text-align:justify;
+  max-width: 900px;
   .mix{
     display:none;
   }
 }
-
+@media screen and (min-width: 700px) {
+  #service_index{
+    column-count:3;
+  }
+  .search_ogp{
+    max-width:450px;
+    margin:-120px auto 20px !important;
+  }
+}
+.container{
+  max-width:900px !important;
+}
 .service{
   display:inline-block;
   padding: 0;
@@ -215,7 +229,7 @@ h2.gallery,h2.keyword_title{
 .search_ogp{
   background-color:#fff;
   margin: -120px 20px 20px;
-  padding: 10px;
+  padding: 2%;
   box-shadow: 0 3px 17px rgba(0, 0, 0, 0.10);
   border-radius:4px;
   #request_ajax_update{

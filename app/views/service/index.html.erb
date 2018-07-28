@@ -1,75 +1,87 @@
-<div class="search_ogp">
-  <div id="request_ajax_update" >
-    <%= form_tag(service_metaget_path, method: :post, remote: true, class: "row") { %>
-      <%= text_field :data, :text ,:class => "col s9",:placeholder => "https://example.com" %>
-      <%= submit_tag '調べる' ,:class => "btn col s3 search_btn",:disabled => true %>
-    <% } %>
-  </div>
-
-  <div id="example_ogp" class="service">
-    <div class="service_block">
-      <div class="card">
-        <div class="thumbnail card-image">
-          <img src="assets/noimage.png" class="ogp_img">
-        </div>
-        <div class="card-content">
-          <p class="service_title card-title">Metagallery</p>
-          <p class="description">metaDescriptionが表示されます。主にサービスの概要が書かれます。上にはサイトタイトル、ogp画像。下にはメタキーワード、favicon、ドメインが表示されます。</p>
-          <span class="chip">Metagallery</span>
-          <span class="chip">メタギャラリー</span>
-          <span class="chip">keyword</span>
-          <p class="domain">
-          <img src="assets/noimage.png" class="favicon">
-          <a href="http://www.metagallery.jp/" target="_blank">www.metagallery.jp</a>
-          </p>
-        </div>
-      </div>
+<section id="search">
+  <div class="search_ogp">
+    <div id="request_ajax_update" >
+      <%= form_tag(service_metaget_path, method: :post, remote: true, class: "row") { %>
+        <%= text_field :data, :text ,:class => "col s9",:placeholder => "https://example.com" %>
+        <%= submit_tag '調べる' ,:class => "btn col s3 search_btn",:disabled => true %>
+      <% } %>
     </div>
-  </div>
-</div>
 
-<div id="keywords_scroll_block">
-  <h2 class="keyword_title">おすすめキーワード</h2>
-  <div class="ziguzagu_block">
-    <img src="ziguzagu.png">
-  </div>
-  <ul class="slide simplyScroll" id="keywords_scroll">
-    <li class="chip filter" data-filter="all">全部</li>
-    <% @keywords.each do |keyword| %>
-      <li class="keyword chip filter" data-filter=".<%= keyword.name %>">#<%= keyword.name %></li>
-    <% end %>
-  </ul>
-</div>
-
-<h2 class="gallery">ギャラリー</h2>
-<div class="ziguzagu_block">
-  <img src="ziguzagu.png">
-</div>
-<div id="service_index" class="container">
-  <% @services.each do |service| %>
-    <div class="mix grid service <%= service.keywords.pluck(:name).join(" ") %>">
+    <div id="example_ogp" class="service">
       <div class="service_block">
         <div class="card">
           <div class="thumbnail card-image">
-            <img src="<%= service.ogpimg %>" class="ogp_img">
+            <img src="assets/noimage.png" class="ogp_img">
           </div>
           <div class="card-content">
-            <p class="service_title card-title"><%= service.title %></p>
-            <p class="description"><%= service.description %></p>
-            <% service.keywords.each do |keyword|  %>
-              <span class="chip"><%= keyword.name %></span>
-            <% end %>
+            <p class="service_title card-title">Metagallery</p>
+            <p class="description">metaDescriptionが表示されます。主にサービスの概要が書かれます。上にはサイトタイトル、ogp画像。下にはメタキーワード、favicon、ドメインが表示されます。</p>
+            <span class="chip">Metagallery</span>
+            <span class="chip">メタギャラリー</span>
+            <span class="chip">keyword</span>
             <p class="domain">
-            <img src="<%= service.favicon %>" class="favicon">
-            <a href="<%= service.url%>" target="_blank"><%= service.domain %></a>
+            <img src="assets/noimage.png" class="favicon">
+            <a href="http://www.metagallery.jp/" target="_blank">www.metagallery.jp</a>
             </p>
           </div>
         </div>
       </div>
     </div>
-  <% end %>
-  <div class="gap"></div>
-  <div class="gap"></div>
-</div>
+  </div>
+</section>
 
+<section id="keywords">
+  <div id="keywords_scroll_block">
+    <h2 class="keyword_title">おすすめキーワード</h2>
+    <div class="ziguzagu_block">
+      <img src="ziguzagu.png">
+    </div>
+    <ul class="slide simplyScroll" id="keywords_scroll">
+      <li class="chip filter" data-filter="all">全部</li>
+      <% @keywords.each do |keyword| %>
+        <li class="keyword chip filter" data-filter=".<%= keyword.name %>">#<%= keyword.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>
 
+<section id="gallery">
+  <h2 class="gallery">ギャラリー</h2>
+  <div class="ziguzagu_block">
+    <img src="ziguzagu.png">
+  </div>
+  <div id="service_index" class="container">
+    <% @services.each do |service| %>
+      <div class="mix grid service <%= service.keywords.pluck(:name).join(" ") %>">
+        <div class="service_block">
+          <div class="card">
+            <div class="thumbnail card-image">
+              <img src="<%= service.ogpimg %>" class="ogp_img">
+            </div>
+            <div class="card-content">
+              <p class="service_title card-title"><%= service.title %></p>
+              <p class="description"><%= service.description %></p>
+              <% service.keywords.each do |keyword|  %>
+                <span class="chip"><%= keyword.name %></span>
+              <% end %>
+              <p class="domain">
+              <img src="<%= service.favicon %>" class="favicon">
+              <a href="<%= service.url%>" target="_blank"><%= service.domain %></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="gap"></div>
+    <div class="gap"></div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="about">メタギャラリーとは</h2>
+  <div class="ziguzagu_block">
+    <img src="ziguzagu.png">
+  </div>
+  <p>様々なサイトの<strong>「title」</strong><strong>「meta description」</strong><strong>「meta keyword」</strong><strong>「ogp画像」</strong><strong>「favicon」</strong><strong>「ドメイン」</strong>を見ることが出来るサービスです。知りたいサイトのはURLを入力して、調べてみましょう。ぜひ他社のサイトを参考にしてご自身のサイトにご活用してみて下さい！</p>
+</section>

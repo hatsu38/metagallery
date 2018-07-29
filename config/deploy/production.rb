@@ -2,7 +2,7 @@
 server '13.230.180.64', user: 'hajime', roles: %w{app db web}
 
 #デプロイするサーバーにsshログインする鍵の情報を記述
-set :ssh_options, keys: '~/.ssh/metagallery_aws'
+set :ssh_options, keys: '~/.ssh/metagallery_key_rsa'
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

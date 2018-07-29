@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
 config.webpacker.check_yarn_integrity = false
-
+GA.tracker = 'UA-81051454-11'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

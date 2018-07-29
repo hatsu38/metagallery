@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= analytics_init if Rails.env.production? %>
     <title>サイトのMetaTag一覧 | メタギャラリー</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width">
@@ -9,22 +10,22 @@
 
     <meta property="og:title" content="サイトのMetaTag一覧 | メタギャラリー" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.metagallery.jp/" />
-    <meta property="og:image" content="/ogp_img.png" />
+    <meta property="og:url" content="<%= root_url%>" />
+    <meta property="og:image" content="<%= root_url%>ogp_img.png" />
     <meta property="og:site_name"  content="サイトのMetaTag一覧 | メタギャラリー" />
     <meta property="og:description" content="様々なサイトの「title」「meta description」「meta keyword」「ogp画像」「favicon」「ドメイン」を見ることが出来るサービスです。知りたいサイトのはURLを入力して、調べてみましょう。ぜひ他社のサイトを参考にしてご自身のサイトにご活用してみて下さい。" />
 
     <!-- //Facebook用 -->
     <meta property="fb:app_id" content="220809312107669" />
-    <meta property="article:publisher" content="http://www.metagallery.jp/" />
+    <meta property="article:publisher" content="<%= root_url%>" />
 
     <!-- //Twitter用 -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@hatsu" />
     <meta name="twitter:title" content="サイトのMetaTag一覧 | メタギャラリー" />
-    <meta name="twitter:url" content="http://www.metagallery.jp/" />
+    <meta name="twitter:url" content="<%= root_url%>" />
     <meta name="twitter:description" content="様々なサイトの「title」「meta description」「meta keyword」「ogp画像」「favicon」「ドメイン」を見ることが出来るサービスです。知りたいサイトのはURLを入力して、調べてみましょう。ぜひ他社のサイトを参考にしてご自身のサイトにご活用してみて下さい。" />
-    <meta name="twitter:image" content="/ogp_img.png" />
+    <meta name="twitter:image" content="<%= root_url%>ogp_img.png" />
 
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
@@ -44,6 +45,7 @@
     </header>
     <%= yield %>
     <footer>
+      <h2>シェアする</h2>
       <div class="ziguzagu_block">
         <img src="ziguzagu.png">
       </div>
@@ -51,21 +53,21 @@
       <ul class="sns_block row">
         <li class="col s4">
           <div class="twitter sns">
-            <a href="https://twitter.com/share?url=http://www.metagallery.jp&text=サイトのMetaTag一覧 | メタギャラリー" target="_blank">
+            <a href="https://twitter.com/share?url=<%= root_url %>&text=サイトのMetaTag一覧 - メタギャラリー" target="_blank">
               <i class="fab fa-twitter"></i>
             </a>
           </div>
         </li>
         <li class="col s4">
           <div class="facebook sns">
-            <a href="https://www.facebook.com/share.php?u=http://www.metagallery.jp/&text=サイトのMetaTag一覧 | メタギャラリー" target="_blank">
+            <a href="https://www.facebook.com/share.php?u=<%= root_url %>&text=サイトのMetaTag一覧 | メタギャラリー" target="_blank">
               <i class="fab fa-facebook-f"></i>
             </a>
           </div>
         </li>
         <li class="col s4">
           <div class="hatena sns">
-            <a href="http://b.hatena.ne.jp/entry/http://www.metagallery.jp/" class="hatena-bookmark-button" data-hatena-bookmark-layout="touch" title="このエントリーをはてなブックマークに追加" target="_blank">
+            <a href="http://b.hatena.ne.jp/entry/<%= root_url %>" class="hatena-bookmark-button" data-hatena-bookmark-layout="touch" title="このエントリーをはてなブックマークに追加" target="_blank">
               B!
             </a>
           </div>

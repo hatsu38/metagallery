@@ -3,9 +3,9 @@ lock "~> 3.11.0"
 
 set :application, "metagallery"
 set :repo_url, "git@github.com:toywonder/metagallery.git"
-set :branch, 'dev/aws_deploy'
 # deploy先のディレクトリ。
 set :deploy_to, '/var/www/metagallery'
+set :branch, 'dev/aws_deploy'
 
 # シンボリックリンクをはるファイル。(※後述)
 set :linked_files, fetch(:linked_files, []).push('config/settings.yml')

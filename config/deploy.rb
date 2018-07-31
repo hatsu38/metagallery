@@ -8,7 +8,7 @@ set :deploy_to, '/var/www/metagallery'
 set :branch, 'dev/aws_deploy'
 
 # シンボリックリンクをはるファイル。(※後述)
-set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
+set :linked_files, fetch(:linked_files, []).push('config/secrets.yml')
 
 # シンボリックリンクをはるフォルダ。(※後述)
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')

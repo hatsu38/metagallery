@@ -1,24 +1,6 @@
-# README
+# メタギャラリー
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![demo](https://raw.githubusercontent.com/wiki/toywonder/metagallery/img/metagallery_demo.gif)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Description
+様々なサイトの「title」「meta description」「meta keyword」「ogp画像」「favicon」「ドメイン」を見ることが出来るサービスです。知りたいサイトのはURLを入力して、簡単に調べることが出来ます。

@@ -32,29 +32,17 @@ class ServiceController < ApplicationController
   def metaget
     url = params[:data][:text]
     begin
-      page = MetaInspector.new(url)
+      post_page = MetaInspector.new(url)
+      page = MetaInspector.new(post_page.root_url)
       flash.now[:success] = "取得しました"
     rescue
       flash.now[:danger] = "取得できませんでした"
       url = "https://example.com/"
       page = MetaInspector.new(url)
     end
-    meta_keywords = page.meta_tag['name']['keywords']
-    if meta_keywords
-      keywords_ary = meta_keywords.split(",")
-    else
-      keywords_ary = []
-    end
-    if page.images.favicon
-      favicon = page.images.favicon
-    else
-      favicon = "assets/noimage.png"
-    end
-    if page.meta['og:image']
-      ogpimg = page.meta['og:image']
-    else
-      ogpimg = "assets/noimage.png"
-    end
+    keywords_ary = get_keyword(page)
+    favicon = get_img(page.images.favicon,page)
+    ogpimg = get_img(page.meta['og:image'],page)
     results = { :meta_url=> page.root_url,
                 :meta_title => page.title,
                 :meta_description => page.description,
@@ -70,4 +58,39 @@ class ServiceController < ApplicationController
   def service_params
     params.require(:service).permit(:url,:domain,:title,:description,:favicon,:ogpimg)
   end
+
+  def get_keyword(page)
+    meta_keywords = page.meta_tag['name']['keywords']
+    if meta_keywords
+      return meta_keywords.split(",")
+    else
+      return []
+    end
+  end
+
+  def get_img(img,page)
+    if img
+      return "noimage.png" unless img.include?("png") || img.include?("jpg") || img.include?("jpeg") || img.include?("gif") || img.include?("ico")
+      if img.start_with?("http")
+        return img
+      else
+        return page.root_url.chop + img
+      end
+    else
+      return "noimage.png"
+    end
+  end
+
+  def get_ogpimg(page)
+    if page.meta['og:image']
+      if page.meta['og:image'].start_with?("http")
+        return page.meta['og:image']
+      else
+        return page.root_url.chop + page.meta['og:image']
+      end
+    else
+      return "noimage.png"
+    end
+  end
+
 end

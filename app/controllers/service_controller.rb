@@ -32,7 +32,8 @@ class ServiceController < ApplicationController
   def metaget
     url = params[:data][:text]
     begin
-      page = MetaInspector.new(url)
+      post_page = MetaInspector.new(url)
+      page = MetaInspector.new(post_page.root_url)
       flash.now[:success] = "取得しました"
     rescue
       flash.now[:danger] = "取得できませんでした"

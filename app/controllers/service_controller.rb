@@ -8,6 +8,13 @@ class ServiceController < ApplicationController
     end
   end
 
+  def contact
+    message = params[:contact][:message]
+    email = params[:contact][:email]
+    inquiry = Inquiry.new(email: email, message: message)
+    InquiryMailer.send_mail(inquiry).deliver_now
+  end
+
   def create
     keywords = params[:meta][:keyword]
     @service = Service.new(service_params)

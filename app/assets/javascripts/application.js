@@ -13,6 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require mixitup
+//= require materialize-sprockets
 //= require_tree .
 $(function() {
   return $('#request_ajax_update').on('ajax:complete', function(event) {

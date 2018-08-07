@@ -80,6 +80,37 @@
       © Copyright 2018 hastu All rights reserved.
       </p>
     </footer>
+    <button data-target="contact_form" class="btn modal-trigger right contact_modal_btn"><i class="far fa-envelope"></i>ご意見箱</button>
+    <div id="contact_form" class="modal">
+      <h3 class="title">ご意見・ご感想はこちら</h3>
+      <div class="contact_message_block">
+        <p class="contact_message">カフェペディアをご利用頂きありがとうございます。</p>
+        <p class="contact_message">カフェペディアをより使いやすいサービスにするため、ご意見を募集しております。</p>
+        <p class="contact_message">ご不明点やご意見がございましたら、フォームよりご連絡ください。メッセージはすべて匿名で送られますのでご安心ください。</p>
+      </div>
+      <%= form_tag(service_contact_path, method: :post, remote: true, class: "row") { %>
+        <div class="input-field message_form">
+          <i class="fas fa-pencil-alt prefix"></i>
+          <%= text_area :contact, :message,:class => "materialize-textarea", :id => "icon_prefix2", :placeholder => "" %>
+          <label for="icon_prefix2">ご意見をご記入ください</label>
+        </div>
 
+        <div class="input-field message_form">
+          <i class="far fa-envelope prefix"></i>
+          <%= text_field :contact, :email,:class => "", :id => "icon_prefix2",:placeholder => "example@cafepedia.com" %>
+          <label for="icon_prefix2" class="mail_label">返信を希望する場合はメールアドレスをご記入ください</label>
+        </div>
+        <div class="submit_btn_cover center">
+          <%= submit_tag '送信する' ,:class => "btn contact_send_btn"%>
+        </div>
+      <% } %>
+    </div>
+  <script>
+$(function(){
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+});
+  </script>
   </body>
 </html>

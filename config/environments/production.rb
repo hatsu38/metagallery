@@ -70,7 +70,7 @@ GA.tracker = 'UA-81051454-11'
     port:                  587,
     domain:               'gmail.com',
     user_name:            'toy.wonder70@gmail.com',
-    password:             'hyailmtrhudnnxdc',
+    password:             'zsigobdjzflfhmlb',
     authentication:       'plain',
     enable_starttls_auto:  true
   }

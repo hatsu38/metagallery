@@ -16,6 +16,7 @@
 
 body{
   background-color:#ebebeb;
+  color: #555;
 }
 
 span.emphasis{
@@ -168,6 +169,11 @@ section,footer{
 
 .container{
   max-width:900px !important;
+  text-align:justify;
+  .mix,.gap{
+    display:inline-block;
+    width:100%;
+  }
 }
 .service{
   display:inline-block;
@@ -301,11 +307,22 @@ section,footer{
 #contact_form{
   width: 97%;
   max-width: 900px;
+  max-height:90%;
   padding:15px;
+  top: 4% !important;
   .title{
-    font-size:20px;
+    font-size:22px;
     text-align:center;
     margin-top: 15px;
+    font-weight:bold;
+  }
+ .flash_message{
+    text-align:center;
+    background-color:#cce5ff;
+    border:1px solid #b8daff;
+    color:#004085;
+    padding: 7px 0;
+    display:none;
   }
   .contact_message_block{
     margin:15px;

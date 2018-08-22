@@ -4,7 +4,7 @@ class InquiryMailer < ApplicationMailer
     mail(
       from: 'toy.wonder70@gmail.com',
       to:   'toy.wonder70@gmail.com',
-      subject: 'お問い合わせ通知 | Cafepedia'
+      subject: 'お問い合わせ通知 | Metagallery'
     )
   end
 end

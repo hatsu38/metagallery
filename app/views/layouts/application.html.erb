@@ -80,9 +80,12 @@
       © Copyright 2018 hastu All rights reserved.
       </p>
     </footer>
-    <button data-target="contact_form" class="btn modal-trigger right contact_modal_btn"><i class="far fa-envelope"></i>ご意見箱</button>
+    <button data-target="contact_form" class="btn modal-trigger right contact_modal_btn">
+      <i class="far fa-envelope"></i>ご意見箱
+    </button>
     <div id="contact_form" class="modal">
       <h3 class="title">ご意見・ご感想はこちら</h3>
+      <div class="flash_message contact_flash">ご意見ありがとうございました。</div>
       <div class="contact_message_block">
         <p class="contact_message">カフェペディアをご利用頂きありがとうございます。</p>
         <p class="contact_message">カフェペディアをより使いやすいサービスにするため、ご意見を募集しております。</p>
@@ -91,17 +94,17 @@
       <%= form_tag(service_contact_path, method: :post, remote: true, class: "row") { %>
         <div class="input-field message_form">
           <i class="fas fa-pencil-alt prefix"></i>
-          <%= text_area :contact, :message,:class => "materialize-textarea", :id => "icon_prefix2", :placeholder => "" %>
+          <%= text_area :inquiry, :message,:class => "materialize-textarea validate_input", :id => "icon_prefix2", :placeholder => "" %>
           <label for="icon_prefix2">ご意見をご記入ください</label>
         </div>
 
         <div class="input-field message_form">
           <i class="far fa-envelope prefix"></i>
-          <%= text_field :contact, :email,:class => "", :id => "icon_prefix2",:placeholder => "example@cafepedia.com" %>
+          <%= text_field :inquiry, :email,:class => "", :id => "icon_prefix2",:placeholder => "example@cafepedia.com" %>
           <label for="icon_prefix2" class="mail_label">返信を希望する場合はメールアドレスをご記入ください</label>
         </div>
         <div class="submit_btn_cover center">
-          <%= submit_tag '送信する' ,:class => "btn contact_send_btn"%>
+          <%= submit_tag '送信する' ,:class => "btn contact_send_btn",:id=>"contact_submit",:disabled=>true %>
         </div>
       <% } %>
     </div>
@@ -109,6 +112,22 @@
 $(function(){
   $(document).ready(function(){
     $('.modal').modal();
+  });
+
+  $("#contact_form .validate_input").on("keydown keyup keypress change", function() {
+    if ($(this).val()) {
+      $("#contact_form .contact_send_btn").prop("disabled", false);
+    } else {
+      $("#contact_form .contact_send_btn").prop("disabled", true);
+    }
+  });
+  $('#contact_form').on('ajax:send',function(data, status, xhr){
+    $('#contact_submit').val('送信中').attr({disabled: true});
+  });
+  $('#contact_form').on('ajax:success',function(data, status, xhr){
+    $('#contact_submit').val('送信する').attr({disabled: false});
+    $('.contact_flash').fadeIn();
+    $('.contact_flash').delay(4000).fadeOut();
   });
 });
   </script>

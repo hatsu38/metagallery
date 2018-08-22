@@ -9,9 +9,10 @@ class ServiceController < ApplicationController
   end
 
   def contact
-    message = params[:contact][:message]
-    email = params[:contact][:email]
+    message = params[:inquiry][:message]
+    email = params[:inquiry][:email]
     inquiry = Inquiry.new(email: email, message: message)
+    inquiry.save
     InquiryMailer.send_mail(inquiry).deliver_now
   end
 

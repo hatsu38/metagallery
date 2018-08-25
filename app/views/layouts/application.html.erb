@@ -90,14 +90,14 @@
       <%= form_tag(service_contact_path, method: :post, remote: true, class: "row") { %>
         <div class="input-field message_form">
           <i class="fas fa-pencil-alt prefix"></i>
-          <%= text_area :inquiry, :message,:class => "materialize-textarea validate_input", :id => "icon_prefix2", :placeholder => "" %>
+          <%= text_area :inquiry, :message,:class => "materialize-textarea validate_input contact_form_area", :id => "icon_prefix2", :placeholder => "" %>
           <label for="icon_prefix2">ご意見をご記入ください</label>
         </div>
 
         <div class="input-field message_form">
           <i class="far fa-envelope prefix"></i>
-          <%= text_field :inquiry, :email,:class => "", :id => "icon_prefix2",:placeholder => "example@cafepedia.com" %>
-          <label for="icon_prefix2" class="mail_label">返信を希望する場合はメールアドレスをご記入ください</label>
+          <%= text_field :inquiry, :email,:class => "contact_form_area", :id => "icon_prefix2",:placeholder => "example@cafepedia.com" %>
+          <label for="icon_prefix2" class="mail_label active">返信を希望する場合はメールアドレスをご記入ください</label>
         </div>
         <div class="submit_btn_cover center">
           <%= submit_tag '送信する' ,:class => "btn contact_send_btn",:id=>"contact_submit",:disabled=>true %>

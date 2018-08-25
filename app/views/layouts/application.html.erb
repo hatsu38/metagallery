@@ -27,13 +27,9 @@
     <meta name="twitter:description" content="様々なサイトの「title」「meta description」「meta keyword」「ogp画像」「favicon」「ドメイン」を見ることが出来るサービスです。知りたいサイトのはURLを入力して、調べてみましょう。ぜひ他社のサイトを参考にしてご自身のサイトにご活用してみて下さい。" />
     <meta name="twitter:image" content="<%= root_url%>ogp_img.png" />
 
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.0/mixitup.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-simplyscroll/2.1.1/jquery.simplyscroll.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0&#45;rc.2/js/materialize.min.js"></script> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -87,8 +83,8 @@
       <h3 class="title">ご意見・ご感想はこちら</h3>
       <div class="flash_message contact_flash">ご意見ありがとうございました。</div>
       <div class="contact_message_block">
-        <p class="contact_message">カフェペディアをご利用頂きありがとうございます。</p>
-        <p class="contact_message">カフェペディアをより使いやすいサービスにするため、ご意見を募集しております。</p>
+        <p class="contact_message">メタギャラリーをご利用頂きありがとうございます。</p>
+        <p class="contact_message">メタギャラリーをより使いやすいサービスにするため、ご意見を募集しております。</p>
         <p class="contact_message">ご不明点やご意見がございましたら、フォームよりご連絡ください。<span class="emphasis">メッセージはすべて匿名で送られます</span>のでご安心ください。</p>
       </div>
       <%= form_tag(service_contact_path, method: :post, remote: true, class: "row") { %>
@@ -108,7 +104,7 @@
         </div>
       <% } %>
     </div>
-  <script>
+    <script>
 $(function(){
   $(document).ready(function(){
     $('.modal').modal();
@@ -130,6 +126,6 @@ $(function(){
     $('.contact_flash').delay(4000).fadeOut();
   });
 });
-  </script>
+    </script>
   </body>
 </html>

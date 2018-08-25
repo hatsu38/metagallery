@@ -46,5 +46,10 @@ $(function() {
 
 
 $(function(){
-  $('#service_index').mixItUp();
+  $('#service_index').mixItUp({
+    animation: {
+      effects: 'fade rotateZ(-180deg)',
+      duration: 500
+    },
+  });
 });

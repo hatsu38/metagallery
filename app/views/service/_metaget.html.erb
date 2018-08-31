@@ -35,7 +35,5 @@
   <%= hidden_field :service,:favicon,:value => results[:meta_favicon] %>
   <%= hidden_field :service,:ogpimg,:value => results[:meta_ogpimg] %>
   <%= hidden_field :meta,:keyword,:value => results[:meta_keyword] %>
-  <% unless Service.exists?(:domain=> results[:meta_domain]) %>
-    <%= submit_tag "追加する",class: 'btn' %>
-  <% end %>
+  <%= submit_tag "追加する",class: 'btn' if @can_add %>
 <% } %>

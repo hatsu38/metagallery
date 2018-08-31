@@ -59,6 +59,8 @@ class ServiceController < ApplicationController
                 :meta_keyword =>keywords_ary,
                 :meta_domain => page.host,
     }
+    @can_add = can_add(results)
+    binding.pry
     render partial: 'metaget', locals: { :results => results }
   end
 
@@ -101,4 +103,15 @@ class ServiceController < ApplicationController
     end
   end
 
+  def can_add(results)
+    if Service.exists?(:domain=>results[:meta_domain])
+      return false
+    elsif results[:meta_ogpimg] == "noimage.png"
+      return false
+    elsif results[:meta_title] && results[:meta_description] && results[:meta_domain]
+      return true
+    else
+      return false
+    end
+  end
 end

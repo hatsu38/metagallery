@@ -14,6 +14,7 @@
 //= require rails-ujs
 //= require mixitup
 //= require materialize-sprockets
+//= require serviceworker-companion
 //= require_tree .
 $(function() {
   return $('#request_ajax_update').on('ajax:complete', function(event) {
@@ -48,3 +49,4 @@ $(function() {
 $(function(){
   $('#service_index').mixItUp();
 });
+//= require serviceworker-companion

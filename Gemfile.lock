@@ -186,6 +186,8 @@ GEM
     selenium-webdriver (3.14.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
+    serviceworker-rails (0.5.5)
+      railties (>= 3.1)
     simplyscroll-rails (1.0.2)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -249,6 +251,7 @@ DEPENDENCIES
   rails (~> 5.1.6)
   sass-rails (~> 5.0)
   selenium-webdriver
+  serviceworker-rails
   simplyscroll-rails
   spring
   spring-watcher-listen (~> 2.0.0)

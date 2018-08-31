@@ -39,7 +39,9 @@
     <ul class="slide simplyScroll" id="keywords_scroll">
       <li class="chip filter" data-filter="all">全部</li>
       <% @keywords.each do |keyword| %>
-        <li class="keyword chip filter" data-filter=".<%= keyword.name %>">#<%= keyword.name %></li>
+        <li class="keyword chip filter" data-filter=".<%= keyword.name %>">
+          #<%= keyword.name %>
+        </li>
       <% end %>
     </ul>
   </div>
@@ -50,9 +52,9 @@
   <div class="ziguzagu_block">
     <img src="ziguzagu.png">
   </div>
-  <div id="service_index" class="container">
+  <div id="service_index">
     <% @services.each do |service| %>
-      <div class="mix grid service <%= service.keywords.pluck(:name).join(" ") %>">
+      <div class="mix service <%= service.keywords.pluck(:name).join(" ") %>">
         <div class="service_block">
           <div class="card">
             <div class="thumbnail card-image">

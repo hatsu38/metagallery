@@ -142,20 +142,17 @@ section,footer{
 }
 
 #service_index{
+  display:table-cell;
   width: 94%;
   margin: 0 auto;
   column-count: 2;
-  max-width: 900px;
   text-align: justify;
+  max-width: 900px;
+  max-width:900px !important;
   .mix{
     display:none;
   }
-}
-
-.container{
-  max-width:900px !important;
-  text-align:justify;
- .gap{
+  .gap{
     display:inline-block;
     width:100%;
   }
@@ -242,11 +239,11 @@ section,footer{
   #example_ogp,#ogp_result{
     position: relative;
     .success{
-     background-color: #cce5ff;
-     color:#004085;
-     border-color: #b8daff;
-     padding: .75rem 1.25rem;
-   }
+      background-color: #cce5ff;
+      color:#004085;
+      border-color: #b8daff;
+      padding: .75rem 1.25rem;
+    }
     .danger{
       color: #721c24;
       background-color: #f8d7da;
@@ -301,7 +298,7 @@ section,footer{
     margin-top: 15px;
     font-weight:bold;
   }
- .flash_message{
+  .flash_message{
     text-align:center;
     background-color:#cce5ff;
     border:1px solid #b8daff;

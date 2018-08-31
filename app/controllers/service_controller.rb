@@ -60,7 +60,6 @@ class ServiceController < ApplicationController
                 :meta_domain => page.host,
     }
     @can_add = can_add(results)
-    binding.pry
     render partial: 'metaget', locals: { :results => results }
   end
 

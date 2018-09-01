@@ -80,8 +80,10 @@ class ServiceController < ApplicationController
   def get_img(img,page)
     if img
       return "noimage.png" unless img.include?("png") || img.include?("jpg") || img.include?("jpeg") || img.include?("gif") || img.include?("ico")
-      if img.start_with?("http")
+      if img.start_with?("https") || is_ssl(page)==false
         return img
+      elsif img.start_with?("http") && is_ssl(page)
+        return img.sub(/http/, 'https')
       else
         return page.root_url.chop + img
       end
@@ -90,15 +92,11 @@ class ServiceController < ApplicationController
     end
   end
 
-  def get_ogpimg(page)
-    if page.meta['og:image']
-      if page.meta['og:image'].start_with?("http")
-        return page.meta['og:image']
-      else
-        return page.root_url.chop + page.meta['og:image']
-      end
+  def is_ssl(page)
+    if page.scheme == "https"
+      return true
     else
-      return "noimage.png"
+      return false
     end
   end
 

@@ -67,9 +67,10 @@
                 <span class="chip"><%= keyword.name %></span>
               <% end %>
               <p class="domain">
-              <img src="<%= service.favicon %>" class="favicon">
-              <a href="<%= service.url%>" target="_blank"><%= service.domain %></a>
+                <img src="<%= service.favicon %>" class="favicon">
+                <a href="<%= service.url%>" target="_blank"><%= service.domain %></a>
               </p>
+              <span style="display:none;"><%= service.id %></span>
             </div>
           </div>
         </div>

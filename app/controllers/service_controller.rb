@@ -1,4 +1,6 @@
 class ServiceController < ApplicationController
+  before_action :set_service,only: [:show,:edit,:update,:destroy]
+
   def index
     @services = Service.all.order("created_at DESC")
     keyword_ary_top10 = ServiceKeyword.group(:keyword_id).order("count_all desc").limit(10).count
@@ -37,6 +39,25 @@ class ServiceController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @service.update(service_params)
+      redirect_to @service, notice: '更新しました'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @service.destroy!
+    redirect_to root_path, notice: '削除しました'
+  end
+
   def metaget
     url = params[:data][:text]
     begin
@@ -66,6 +87,10 @@ class ServiceController < ApplicationController
   private
   def service_params
     params.require(:service).permit(:url,:domain,:title,:description,:favicon,:ogpimg)
+  end
+
+  def set_service
+    @service = Service.find(params[:id])
   end
 
   def get_keyword(page)

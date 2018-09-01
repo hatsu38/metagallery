@@ -1,0 +1,25 @@
+<div class="mix service <%= @service.keywords.pluck(:name).join(" ") %>">
+  <div class="service_block">
+    <div class="card">
+      <div class="thumbnail card-image">
+        <img src="<%= @service.ogpimg %>" class="ogp_img">
+      </div>
+      <div class="card-content">
+        <p class="service_title card-title"><%= @service.title %></p>
+        <p class="description"><%= @service.description %></p>
+        <% @service.keywords.each do |keyword|  %>
+          <span class="chip"><%= keyword.name %></span>
+        <% end %>
+        <p class="domain">
+        <img src="<%= @service.favicon %>" class="favicon">
+        <a href="<%= @service.url%>" target="_blank"><%= @service.domain %></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="center">
+  <%= link_to '編集', edit_service_path(@service), class: 'btn waves-effect waves-light' %>
+  <%= link_to '削除', service_path(@service),method: :DELETE,data:{confirm: "「#{@service.title}」を削除しますか？"}, class: 'btn waves-effect waves-light' %>
+</div>

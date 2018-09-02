@@ -332,6 +332,14 @@ section,footer{
     }
   }
 }
+
+@media screen and (min-width: 420px) {
+  #contact_form{
+    .contact_form_area{
+      transform:scale(0.9);
+    }
+  }
+}
 @media screen and (min-width: 700px) {
   #service_index{
     column-count:3;

@@ -38,10 +38,17 @@ $(function() {
 
 $(function(){
   if(isPC()==true){
-    console.log("ps");
     $("#fixed_header .header_text_block .fa-columns").hide();
     $("#fixed_header .header_text_block .fa-square").hide();
     $("#fixed_header h2").css("margin-left","1rem");
+  }
+});
+
+$('#service_search_input').keypress( function ( e ) {
+  if ( e.which == 13 ) {
+    console.log("close");
+    $("#service_search_input").blur();
+    return false;
   }
 });
 

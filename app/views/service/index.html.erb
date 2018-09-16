@@ -57,7 +57,7 @@
   <div class="service_search_form_block">
     <div class="service_search_form_cover">
       <i class="fas fa-search form_to_close"></i>
-      <form id="service_search_form" action="/" onsubmit="return false;">
+      <form id="service_search_form" action="/" onsubmit="document.activeElement.blur();return false;">
         <input id="service_search_input" type="search" placeholder="キーワード検索">
         <label for="service_search_input"></label>
       </form>

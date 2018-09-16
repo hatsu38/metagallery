@@ -44,14 +44,6 @@ $(function(){
   }
 });
 
-$('#service_search_input').keypress( function ( e ) {
-  if ( e.which == 13 ) {
-    console.log("close");
-    $("#service_search_input").blur();
-    return false;
-  }
-});
-
 $(function(){
   $('#service_index').mixItUp();
 });
@@ -59,7 +51,7 @@ $(function(){
 $(function(){
   var isTwoColumn = JSON.parse(localStorage.getItem("two_column_gallery"));
   if(isPC()==false){
-    if(isTwoColumn){
+    if(isTwoColumn != false){
       $("#fixed_header .header_text_block .fa-columns").show();
       $("#fixed_header .header_text_block .fa-square").hide();
     }else{
@@ -142,11 +134,11 @@ function isPC() {
 function isFixedHeader(scrolling_increment,fixed_header_if_line) {
   console.log("isFixedHeader");
   if(scrolling_increment > fixed_header_if_line - 70) {
-    $("#fixed_header").fadeIn();
-    $(".sort_top_btn").fadeIn();
+    $("#fixed_header").show();
+    $(".sort_top_btn").show();
   }else{
-    $("#fixed_header").fadeOut();
-    $(".sort_top_btn").fadeOut();
+    $("#fixed_header").hide();
+    $(".sort_top_btn").hide();
   }
 }
 

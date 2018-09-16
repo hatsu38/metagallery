@@ -37,18 +37,29 @@ $(function() {
 });
 
 $(function(){
+  if(isPC()==true){
+    console.log("ps");
+    $("#fixed_header .header_text_block .fa-columns").hide();
+    $("#fixed_header .header_text_block .fa-square").hide();
+    $("#fixed_header h2").css("margin-left","1rem");
+  }
+});
+
+$(function(){
   $('#service_index').mixItUp();
 });
 
 $(function(){
   var isTwoColumn = JSON.parse(localStorage.getItem("two_column_gallery"));
-  if(isTwoColumn){
-    $(".fa-columns").show();
-    $(".fa-square").hide();
-  }else{
-    $(".fa-columns").hide();
-    $(".fa-square").show();
-    $("#service_index").css('column-count','1');
+  if(isPC()==false){
+    if(isTwoColumn){
+      $("#fixed_header .header_text_block .fa-columns").show();
+      $("#fixed_header .header_text_block .fa-square").hide();
+    }else{
+      $(".fa-columns").hide();
+      $("#fixed_header .header_text_block .fa-square").show();
+      $("#service_index").css('column-count','1');
+    }
   }
 });
 
@@ -106,6 +117,20 @@ $(function () {
   };
   $('#service_search_input').on('input', searchWord);
 });
+
+function isPC() {
+    var ua = navigator.userAgent;
+    if (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
+      return false;
+        // スマートフォン用コード
+    } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
+      return false;
+        // タブレット用コード
+    } else {
+      return true;
+        // PC用コード
+    }
+};
 
 function isFixedHeader(scrolling_increment,fixed_header_if_line) {
   console.log("isFixedHeader");

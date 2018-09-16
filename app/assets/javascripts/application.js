@@ -16,6 +16,7 @@
 //= require materialize-sprockets
 //= require serviceworker-companion
 //= require_tree .
+
 $(function() {
   return $('#request_ajax_update').on('ajax:complete', function(event) {
     var response;
@@ -23,11 +24,6 @@ $(function() {
     return $('#example_ogp').html(response);
   });
 });
-
-
-function isUrlValid(url) {
-    return /^(https?|s?ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
-}
 
 
 $(function() {
@@ -39,14 +35,80 @@ $(function() {
     }
   });
 });
-//
-// $(function() {
-//   $("#keywords_scroll").simplyScroll();
-// });
-//
-
 
 $(function(){
   $('#service_index').mixItUp();
 });
-//= require serviceworker-companion
+
+$(function(){
+  var isTwoColumn = JSON.parse(localStorage.getItem("two_column_gallery"));
+  if(isTwoColumn){
+    $(".fa-columns").show();
+    $(".fa-square").hide();
+  }else{
+    $(".fa-columns").hide();
+    $(".fa-square").show();
+    $("#service_index").css('column-count','1');
+  }
+});
+
+
+$(function() {
+  var fixed_header_if_line = $("#keywords").offset().top;
+  var scrolling_increment = $(document).scrollTop();
+  isFixedHeader(scrolling_increment,fixed_header_if_line);
+  $(window).on('scroll' , function(){
+    var scrolling_increment = $(document).scrollTop();
+    isFixedHeader(scrolling_increment,fixed_header_if_line);
+  });
+
+  $(".fa-columns").on('click',function(){
+    $("#service_index").css('column-count','1');
+    $(this).hide();
+    $(".fa-square").show();
+    localStorage.setItem('two_column_gallery', false);
+  });
+
+  $(".fa-square").on('click',function(){
+    $("#service_index").css('column-count','2');
+    $(this).hide();
+    $(".fa-columns").show();
+    localStorage.setItem('two_column_gallery', true);
+  });
+
+  $(".sort_top_btn").on('click',function(){
+    $('body, html').animate({ scrollTop: 0 }, 500);
+  });
+
+  $(".form_to_appear").on('click',function(){
+    $('.service_search_form_block').show();
+    $('.header_text_block').hide();
+  });
+
+  $(".form_to_close").on('click',function(){
+    $('.service_search_form_block').hide();
+    $('.header_text_block').show();
+  });
+
+});
+
+
+function isFixedHeader(scrolling_increment,fixed_header_if_line) {
+  console.log("isFixedHeader");
+  if(scrolling_increment > fixed_header_if_line - 70) {
+    $("#fixed_header").fadeIn();
+    $(".sort_top_btn").fadeIn();
+  }else{
+    $("#fixed_header").fadeOut();
+    $(".sort_top_btn").fadeOut();
+  }
+}
+
+
+function isUrlValid(url) {
+    return /^(https?|s?ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
+}
+
+// $(function() {
+//   $("#keywords_scroll").simplyScroll();
+// });

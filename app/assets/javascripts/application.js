@@ -92,6 +92,20 @@ $(function() {
 
 });
 
+$(function () {
+  searchWord = function(){
+    var searchText = $("#service_search_input").val();
+    $('#service_index .service').each(function() {
+      targetText = $(this).text();
+      if (targetText.indexOf(searchText) != -1) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  };
+  $('#service_search_input').on('input', searchWord);
+});
 
 function isFixedHeader(scrolling_increment,fixed_header_if_line) {
   console.log("isFixedHeader");

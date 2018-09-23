@@ -1,0 +1,467 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 18, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+body {
+  background-color: #ebebeb;
+  color: #555;
+}
+
+/* line 23, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+span.emphasis {
+  color: #6b7ee5;
+  font-weight: bold;
+}
+
+/* line 28, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+header {
+  background-color: #6b7ee5;
+  color: #fff;
+  height: 205px;
+}
+/* line 32, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+header i {
+  width: 100%;
+  text-align: center;
+  font-size: 1.6em;
+  margin-top: 10px;
+}
+/* line 38, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+header h1 {
+  margin: 0 auto;
+  line-height: 35px;
+  font-size: 2.6em;
+  text-align: center;
+}
+
+/* line 45, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#fixed_header {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #6b7ee5;
+  color: #fff;
+  z-index: 9;
+  height: 3rem;
+}
+/* line 54, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#fixed_header .header_text_block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+/* line 58, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#fixed_header .header_text_block h2 {
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+/* line 65, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#fixed_header .header_text_block i {
+  font-size: 1.4rem;
+  margin: 0 1rem;
+  line-height: 3rem;
+}
+/* line 71, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#fixed_header .service_search_form_block {
+  display: none;
+}
+/* line 73, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#fixed_header .service_search_form_block .service_search_form_cover {
+  display: flex;
+}
+/* line 75, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#fixed_header .service_search_form_block .service_search_form_cover i {
+  line-height: 3rem;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+/* line 80, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#fixed_header .service_search_form_block .service_search_form_cover #service_search_form {
+  width: 90%;
+  margin-right: 1rem;
+}
+/* line 83, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#fixed_header .service_search_form_block .service_search_form_cover #service_search_form input {
+  color: #fff;
+  margin-left: 1rem;
+  border: none;
+  box-shadow: none;
+}
+
+/* line 95, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+footer .footer_border_top {
+  width: 85%;
+  height: 3px;
+  background: #555;
+  margin: 0 auto;
+}
+/* line 101, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+footer .sns_block {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 2em;
+  margin-top: .8em;
+}
+/* line 107, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+footer .sns_block .sns {
+  border-radius: 5px;
+  display: block;
+  color: #fff;
+}
+/* line 112, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+footer .sns_block .twitter {
+  background-color: #74c1f8;
+}
+/* line 115, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+footer .sns_block .facebook {
+  background-color: #668ad8;
+}
+/* line 118, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+footer .sns_block .hatena {
+  background-color: #6eaff3;
+}
+/* line 122, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+footer .info_block {
+  margin: 1.2em auto 0;
+  text-align: center;
+  width: 60%;
+}
+/* line 126, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+footer .info_block a {
+  margin-right: 3px;
+  color: #555;
+}
+/* line 129, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+footer .info_block a i {
+  margin-right: 2px;
+}
+/* line 134, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+footer .footer_copy {
+  font-size: 12px;
+  text-align: center;
+  margin: .5em auto;
+}
+
+/* line 140, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.sort_top_btn {
+  position: fixed;
+  bottom: .5rem;
+  left: .5rem;
+  font-size: 1.5rem;
+  line-height: 3.8rem;
+}
+/* line 146, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.sort_top_btn .fa-circle {
+  color: #6b7ee5;
+}
+/* line 149, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.sort_top_btn .fa-sort-up {
+  color: #fff;
+  font-size: 2.2rem;
+}
+
+/* line 155, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+section, footer {
+  width: 94%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+/* line 159, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+section h2, footer h2 {
+  color: #4a4949;
+  text-align: center;
+  margin: 45px auto 6px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* line 168, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#keywords_scroll_block {
+  width: 94%;
+  margin: 0 auto;
+}
+/* line 171, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#keywords_scroll_block .chip {
+  background-color: #fff;
+}
+
+/* line 199, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.ziguzagu_block {
+  text-align: center;
+}
+/* line 201, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.ziguzagu_block img {
+  width: 15%;
+  max-width: 90px;
+}
+
+/* line 207, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#service_index {
+  display: table-cell;
+  width: 94%;
+  margin: 0 auto;
+  column-count: 2;
+  text-align: justify;
+  max-width: 900px;
+  max-width: 900px !important;
+}
+/* line 215, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#service_index .mix {
+  display: none;
+}
+/* line 218, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#service_index .gap {
+  display: inline-block;
+  width: 100%;
+}
+
+/* line 223, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service {
+  display: inline-block;
+  padding: 0;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+/* line 229, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block {
+  margin: .3em;
+}
+/* line 231, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .row.service_name_block {
+  margin: 0 0 .1em;
+}
+/* line 233, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .row.service_name_block .service_name {
+  font-size: 1.1em;
+  margin: .2em auto;
+}
+/* line 238, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card {
+  margin-top: 0;
+  border-radius: 4px 4px 0 0;
+}
+/* line 241, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card .thumbnail {
+  max-width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+/* line 244, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card .thumbnail .ogp_img {
+  border-radius: 4px 4px 0 0;
+  max-width: 100%;
+}
+/* line 249, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card .card-content {
+  padding: 5px;
+  color: #4a4949;
+}
+/* line 252, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card .card-content p {
+  word-break: break-all;
+  margin: .2em auto;
+  color: #292F33;
+}
+/* line 257, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card .card-content .service_title {
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #333;
+}
+/* line 263, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card .card-content .description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+}
+/* line 269, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card .card-content .chip {
+  height: auto;
+  line-height: normal;
+  padding: 4px 5px;
+  font-size: 8px;
+  margin-right: 0;
+}
+/* line 276, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card .card-content .domain {
+  text-align: right;
+}
+/* line 278, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card .card-content .domain .favicon {
+  width: 16px;
+}
+/* line 281, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.service .service_block .card .card-content .domain a {
+  color: #8899A6;
+}
+
+/* line 290, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.search_ogp {
+  background-color: #fff;
+  margin: -120px 20px 20px;
+  padding: 2%;
+  box-shadow: 0 3px 17px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+/* line 297, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.search_ogp #request_ajax_update .row {
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+/* line 302, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.search_ogp #example_ogp, .search_ogp #ogp_result {
+  position: relative;
+}
+/* line 304, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.search_ogp #example_ogp .success, .search_ogp #ogp_result .success {
+  background-color: #cce5ff;
+  color: #004085;
+  border-color: #b8daff;
+  padding: .75rem 1.25rem;
+}
+/* line 310, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.search_ogp #example_ogp .danger, .search_ogp #ogp_result .danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: .75rem 1.25rem;
+}
+/* line 317, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.search_ogp #example_ogp .card-image img, .search_ogp #ogp_result .card-image img {
+  height: 214px;
+}
+/* line 321, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.search_ogp #example_ogp form, .search_ogp #ogp_result form {
+  text-align: right;
+}
+/* line 324, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.search_ogp #example_ogp #loading, .search_ogp #ogp_result #loading {
+  display: none;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 20%;
+}
+
+/* line 335, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#about p {
+  line-height: 1.7;
+  padding: 15px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1em;
+}
+
+/* line 343, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.contact_modal_btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0 1rem;
+  background-color: #6b7ee5;
+}
+/* line 349, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+.contact_modal_btn i {
+  font-size: 14px;
+}
+
+/* line 353, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#contact_form {
+  width: 97%;
+  max-width: 900px;
+  max-height: 90%;
+  padding: 15px;
+  top: 4% !important;
+}
+/* line 359, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#contact_form .title {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+/* line 365, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#contact_form .flash_message {
+  text-align: center;
+  background-color: #cce5ff;
+  border: 1px solid #b8daff;
+  color: #004085;
+  padding: 7px 0;
+  display: none;
+}
+/* line 373, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#contact_form .contact_message_block {
+  margin: 15px;
+}
+/* line 375, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#contact_form .contact_message_block .contact_message {
+  font-size: 14px;
+}
+/* line 379, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#contact_form .message_form {
+  margin-top: 55px;
+}
+/* line 382, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#contact_form .contact_form_area {
+  font-size: 16px;
+  transform: scale(0.8);
+  width: 92%;
+  margin-left: 1rem;
+}
+/* line 388, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#contact_form .mail_label {
+  width: 360px;
+}
+/* line 391, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#contact_form .center {
+  width: 100%;
+  margin: 0 auto;
+}
+/* line 394, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+#contact_form .center .contact_send_btn {
+  padding: 0 1.2rem;
+}
+
+@media screen and (min-width: 420px) {
+  /* line 402, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+  #contact_form .contact_form_area {
+    transform: scale(0.9);
+  }
+}
+@media screen and (min-width: 700px) {
+  /* line 408, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+  #service_index {
+    column-count: 3;
+  }
+
+  /* line 411, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+  .search_ogp {
+    max-width: 450px;
+    margin: -120px auto 20px !important;
+  }
+}
+@media screen and (min-width: 320px) {
+  /* line 417, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
+  #contact_form .mail_label {
+    font-size: 12.3px;
+  }
+}

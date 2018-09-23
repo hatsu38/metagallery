@@ -1,0 +1,26 @@
+
+<%= form_for(@service) do |f| %>
+  <div class="input-field">
+    <%= f.text_field :ogpimg,:id=>"ogp_val"  %>
+    <%= f.label:ogpimg,:id=>"ogp_val" ,:class=>"active" %>
+  </div>
+  <div class="input-field">
+    <%= f.text_field :domain %>
+    <%= f.label:domain,:class=>"active" %>
+  </div>
+  <div class="input-field">
+    <%= f.text_field :title %>
+    <%= f.label:title,:class=>"active" %>
+  </div>
+  <div class="input-field">
+    <%= f.text_field :description %>
+    <%= f.label:description,:class=>"active" %>
+  </div>
+  <div class="input-field">
+    <%= f.text_field :favicon %>
+    <%= f.label:favicon,:class=>"active" %>
+  </div>
+  <div class="center">
+    <%= submit_tag "更新する",class: 'btn' %>
+  </div>
+<% end %>

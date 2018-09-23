@@ -16,6 +16,7 @@
 
 body{
   background-color:#ebebeb;
+  color: #555;
 }
 
 span.emphasis{
@@ -40,22 +41,56 @@ header{
     text-align: center;
   }
 }
+#fixed_header{
+  display:none;
+  position:fixed;
+  top:0;
+  width:100%;
+  background-color:#6b7ee5;
+  color: #fff;
+  z-index:9;
+  height:3rem;
+  .header_text_block{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    h2{
+      font-size:2rem;
+      line-height:3rem;
+      text-align:center;
+      color:#fff;
+      margin:0;
+    }
+    i{
+      font-size:1.4rem;
+      margin:0 1rem;
+      line-height:3rem;
+    }
+  }
+  .service_search_form_block{
+    display:none;
+    .service_search_form_cover{
+      display:flex;
+      i{
+        line-height:3rem;
+        font-size:1.3rem;
+        margin-left:1rem;
+      }
+      #service_search_form{
+        width:90%;
+        margin-right:1rem;
+        input{
+          color:#fff;
+          margin-left:1rem;
+          border:none;
+          box-shadow:none;
+        }
+      }
+    }
+  }
+}
+
 footer{
-  // margin: 2.7em auto 0;
-  // .ziguzagu_block{
-  //   text-align:center;
-  //   img{
-  //     width:25%;
-  //     max-width:100px;
-  //   }
-  // }
-  // h2{
-  //   color:#4a4949;
-  //   text-align:center;
-  //   margin:45px auto 5px;
-  //   font-size:28px;
-  //   font-weight:bold;
-  // }
   .footer_border_top{
     width:85%;
     height:3px;
@@ -70,9 +105,8 @@ footer{
     margin-top:.8em;
     .sns{
       border-radius:5px;
-      a{
+      display:block;
         color: #fff;
-      }
     }
     .twitter{
       background-color: #74c1f8;
@@ -100,6 +134,20 @@ footer{
     font-size:12px;
     text-align:center;
     margin: .5em auto;
+  }
+}
+.sort_top_btn{
+  position:fixed;
+  bottom:.5rem;
+  left:.5rem;
+  font-size: 1.5rem;
+  line-height: 3.8rem;
+  .fa-circle{
+    color:#6b7ee5;
+  }
+  .fa-sort-up{
+    color:#fff;
+    font-size:2.2rem;
   }
 }
 
@@ -156,18 +204,20 @@ section,footer{
 }
 
 #service_index{
+  display:table-cell;
   width: 94%;
   margin: 0 auto;
   column-count: 2;
-  text-align:justify;
+  text-align: justify;
   max-width: 900px;
+  max-width:900px !important;
   .mix{
     display:none;
   }
-}
-
-.container{
-  max-width:900px !important;
+  .gap{
+    display:inline-block;
+    width:100%;
+  }
 }
 .service{
   display:inline-block;
@@ -251,11 +301,11 @@ section,footer{
   #example_ogp,#ogp_result{
     position: relative;
     .success{
-     background-color: #cce5ff;
-     color:#004085;
-     border-color: #b8daff;
-     padding: .75rem 1.25rem;
-   }
+      background-color: #cce5ff;
+      color:#004085;
+      border-color: #b8daff;
+      padding: .75rem 1.25rem;
+    }
     .danger{
       color: #721c24;
       background-color: #f8d7da;
@@ -294,6 +344,7 @@ section,footer{
   bottom:0;
   right:0;
   padding:0 1rem;
+  background-color:#6b7ee5;
   i{
     font-size:14px;
   }
@@ -301,11 +352,22 @@ section,footer{
 #contact_form{
   width: 97%;
   max-width: 900px;
+  max-height:90%;
   padding:15px;
+  top: 4% !important;
   .title{
-    font-size:20px;
+    font-size:22px;
     text-align:center;
     margin-top: 15px;
+    font-weight:bold;
+  }
+  .flash_message{
+    text-align:center;
+    background-color:#cce5ff;
+    border:1px solid #b8daff;
+    color:#004085;
+    padding: 7px 0;
+    display:none;
   }
   .contact_message_block{
     margin:15px;
@@ -315,6 +377,12 @@ section,footer{
   }
   .message_form{
     margin-top: 55px;
+  }
+  .contact_form_area{
+    font-size: 16px;
+    transform: scale(0.8);
+    width: 92%;
+    margin-left: 1rem;
   }
   .mail_label{
     width:360px;
@@ -327,6 +395,14 @@ section,footer{
     }
   }
 }
+
+@media screen and (min-width: 420px) {
+  #contact_form{
+    .contact_form_area{
+      transform:scale(0.9);
+    }
+  }
+}
 @media screen and (min-width: 700px) {
   #service_index{
     column-count:3;
@@ -334,5 +410,10 @@ section,footer{
   .search_ogp{
     max-width:450px;
     margin:-120px auto 20px !important;
+  }
+}
+@media screen and (min-width: 320px) {
+  #contact_form .mail_label{
+    font-size:12.3px;
   }
 }

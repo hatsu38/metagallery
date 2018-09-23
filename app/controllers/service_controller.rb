@@ -1,4 +1,6 @@
 class ServiceController < ApplicationController
+  before_action :set_service,only: [:show,:edit,:update,:destroy]
+
   def index
     @services = Service.all.order("created_at DESC")
     keyword_ary_top10 = ServiceKeyword.group(:keyword_id).order("count_all desc").limit(10).count
@@ -9,9 +11,10 @@ class ServiceController < ApplicationController
   end
 
   def contact
-    message = params[:contact][:message]
-    email = params[:contact][:email]
+    message = params[:inquiry][:message]
+    email = params[:inquiry][:email]
     inquiry = Inquiry.new(email: email, message: message)
+    inquiry.save
     InquiryMailer.send_mail(inquiry).deliver_now
   end
 
@@ -36,6 +39,25 @@ class ServiceController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @service.update(service_params)
+      redirect_to @service, notice: '更新しました'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @service.destroy!
+    redirect_to root_path, notice: '削除しました'
+  end
+
   def metaget
     url = params[:data][:text]
     begin
@@ -58,12 +80,17 @@ class ServiceController < ApplicationController
                 :meta_keyword =>keywords_ary,
                 :meta_domain => page.host,
     }
+    @can_add = can_add(results)
     render partial: 'metaget', locals: { :results => results }
   end
 
   private
   def service_params
     params.require(:service).permit(:url,:domain,:title,:description,:favicon,:ogpimg)
+  end
+
+  def set_service
+    @service = Service.find(params[:id])
   end
 
   def get_keyword(page)
@@ -78,8 +105,10 @@ class ServiceController < ApplicationController
   def get_img(img,page)
     if img
       return "noimage.png" unless img.include?("png") || img.include?("jpg") || img.include?("jpeg") || img.include?("gif") || img.include?("ico")
-      if img.start_with?("http")
+      if img.start_with?("https") || is_ssl(page)==false
         return img
+      elsif img.start_with?("http") && is_ssl(page)
+        return img.sub(/http/, 'https')
       else
         return page.root_url.chop + img
       end
@@ -88,16 +117,23 @@ class ServiceController < ApplicationController
     end
   end
 
-  def get_ogpimg(page)
-    if page.meta['og:image']
-      if page.meta['og:image'].start_with?("http")
-        return page.meta['og:image']
-      else
-        return page.root_url.chop + page.meta['og:image']
-      end
+  def is_ssl(page)
+    if page.scheme == "https"
+      return true
     else
-      return "noimage.png"
+      return false
     end
   end
 
+  def can_add(results)
+    if Service.exists?(:domain=>results[:meta_domain])
+      return false
+    elsif results[:meta_ogpimg] == "noimage.png"
+      return false
+    elsif results[:meta_title] && results[:meta_description] && results[:meta_domain]
+      return true
+    else
+      return false
+    end
+  end
 end

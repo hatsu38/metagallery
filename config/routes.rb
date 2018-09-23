@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'service/index'
+  resources :service
   post 'service/contact'
   post  'service/metaget', to: 'service#metaget', as: 'service_metaget'
   post 'service/create'

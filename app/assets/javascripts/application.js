@@ -99,17 +99,42 @@ $(function() {
     $('.service_search_form_block').hide();
     $('.header_text_block').show();
   });
+
+  $(".chip").on('click',function(){
+    $(this).addClass("active");
+    $('.form_to_close').trigger('click');
+    $("#service_search_input").val("");
+    if($(this).attr('data-filter')=="all"){
+      $(".gallery").text("ギャラリー");
+    }else{
+      $(".gallery").text($(this).text());
+    }
+  });
 });
 
 $(function () {
   searchWord = function(){
+    var all_service= $("#service_index").find(".mix").length;
     var searchText = $("#service_search_input").val();
+    $(".chip").removeClass("active");
+    if(searchText.length){
+      $(".gallery").text(searchText);
+    }else{
+      $(".gallery").text("ギャラリー");
+    }
+    var hidden_service = 0;
     $('#service_index .service').each(function() {
       targetText = $(this).text();
-      if (targetText.indexOf(searchText) != -1) {
+      if(targetText.indexOf(searchText) != -1) {
         $(this).show();
       } else {
         $(this).hide();
+        hidden_service++;
+        if(hidden_service == all_service){
+          $(".no_service_msg").show();
+        }else{
+          $(".no_service_msg").hide();
+        }
       }
     });
   };

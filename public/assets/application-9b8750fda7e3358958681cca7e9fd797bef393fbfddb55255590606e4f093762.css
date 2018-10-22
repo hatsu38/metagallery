@@ -319,7 +319,7 @@ section h2, footer h2 {
 /* line 293, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
 .search_ogp {
   background-color: #fff;
-  margin: 50px 20px 20px;
+  margin: 4rem auto 20px;
   padding: 2%;
   box-shadow: 0 3px 17px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
@@ -457,8 +457,7 @@ section h2, footer h2 {
 
   /* line 415, /Users/hajime/programing/project/metascope/app/assets/stylesheets/application.css.scss */
   .search_ogp {
-    max-width: 450px;
-    margin: -120px auto 20px !important;
+    max-width: 375px;
   }
 }
 @media screen and (min-width: 320px) {

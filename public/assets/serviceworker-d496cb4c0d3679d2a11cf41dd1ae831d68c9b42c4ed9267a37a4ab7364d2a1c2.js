@@ -11,7 +11,7 @@ function onInstall(event) {
         // if you want to reference application.js from here
         '',
 
-        '/assets/application-9b8750fda7e3358958681cca7e9fd797bef393fbfddb55255590606e4f093762.css',
+        '/assets/application-d9c30425385843818c24dc7d45ed4c6a61a86a653514ba1974d6e02fc9d0aa93.css',
 
         '/offline.html',
 

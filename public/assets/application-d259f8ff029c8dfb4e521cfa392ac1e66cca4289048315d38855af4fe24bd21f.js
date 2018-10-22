@@ -24468,7 +24468,7 @@ function onInstall(event) {
         // if you want to reference application.js from here
         '',
 
-        '/assets/application-b14885dddd0826ca1f4a4e625df4109e6f596160faa19bb9ee1c2d6be235a2e2.css',
+        '/assets/application-cc11f14b46262a73645f426793fa2b407702d0b7b75887e1ece349b51e69a610.css',
 
         '/offline.html',
 
@@ -24620,7 +24620,6 @@ $(function() {
     $('.service_search_form_block').hide();
     $('.header_text_block').show();
   });
-
 });
 
 $(function () {
@@ -24653,15 +24652,15 @@ function isPC() {
 };
 
 function isFixedHeader(scrolling_increment,fixed_header_if_line) {
-  console.log("isFixedHeader");
   if(scrolling_increment > fixed_header_if_line - 70) {
-    $("#fixed_header").show();
+    // $("#fixed_header").show();
     $(".sort_top_btn").show();
   }else{
-    $("#fixed_header").hide();
+    // $("#fixed_header").hide();
     $(".sort_top_btn").hide();
   }
 }
+
 
 
 function isUrlValid(url) {

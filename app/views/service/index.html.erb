@@ -52,6 +52,7 @@
   <div class="ziguzagu_block">
     <img src="ziguzagu.png">
   </div>
+  <p class="no_service_msg">対象のキーワードのサービスはありません</p>
   <div id="service_index">
     <% @services.each do |service| %>
       <div class="mix service <%= service.keywords.pluck(:name).join(" ") %>">

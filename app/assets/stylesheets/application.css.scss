@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+// $keycolor = #6b7ee5;
 
 body{
   background-color:#ebebeb;
@@ -173,6 +174,11 @@ section,footer{
   .chip{
     background-color:#fff;
   }
+  .active{
+    background-color: #6b7ee5;
+    color:#fff;
+    font-weight:bold;
+  }
 }
 // #keywords_scroll{
 //   overflow-x: auto;
@@ -204,6 +210,10 @@ section,footer{
     width:15%;
     max-width:90px;
   }
+}
+.no_service_msg{
+  display:none;
+  text-align:center;
 }
 
 #service_index{

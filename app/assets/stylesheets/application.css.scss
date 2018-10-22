@@ -25,6 +25,7 @@ span.emphasis{
 }
 
 header{
+  display:none;
   background-color:#6b7ee5;
   color: #fff;
   height: 205px;
@@ -43,7 +44,8 @@ header{
   }
 }
 #fixed_header{
-  display:none;
+  // display:none;
+  display:block;
   position:fixed;
   top:0;
   width:100%;
@@ -289,14 +291,15 @@ section,footer{
 
 .search_ogp{
   background-color:#fff;
-  margin: -120px 20px 20px;
+  // margin: -120px 20px 20px;
+  margin: 50px 20px 20px;
   padding: 2%;
   box-shadow: 0 3px 17px rgba(0, 0, 0, 0.10);
   border-radius:4px;
   #request_ajax_update{
     .row{
       margin-bottom:0;
-      margin-top:15px;
+      margin-top:0;
     }
   }
   #example_ogp,#ogp_result{

@@ -130,7 +130,7 @@ class ServiceController < ApplicationController
       return false
     elsif results[:meta_ogpimg] == "noimage.png"
       return false
-    elsif results[:meta_title] && results[:meta_description] && results[:meta_domain]
+    elsif results[:meta_title] && results[:meta_domain]
       return true
     else
       return false

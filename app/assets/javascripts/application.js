@@ -99,7 +99,6 @@ $(function() {
     $('.service_search_form_block').hide();
     $('.header_text_block').show();
   });
-
 });
 
 $(function () {
@@ -132,15 +131,15 @@ function isPC() {
 };
 
 function isFixedHeader(scrolling_increment,fixed_header_if_line) {
-  console.log("isFixedHeader");
   if(scrolling_increment > fixed_header_if_line - 70) {
-    $("#fixed_header").show();
+    // $("#fixed_header").show();
     $(".sort_top_btn").show();
   }else{
-    $("#fixed_header").hide();
+    // $("#fixed_header").hide();
     $(".sort_top_btn").hide();
   }
 }
+
 
 
 function isUrlValid(url) {

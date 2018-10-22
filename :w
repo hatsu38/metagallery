@@ -292,7 +292,7 @@ section,footer{
 .search_ogp{
   background-color:#fff;
   // margin: -120px 20px 20px;
-  margin: 4rem auto 20px;
+  margin: 50px 20px 20px;
   padding: 2%;
   box-shadow: 0 3px 17px rgba(0, 0, 0, 0.10);
   border-radius:4px;
@@ -412,7 +412,7 @@ section,footer{
     column-count:3;
   }
   .search_ogp{
-    max-width:375px;
+    max-width:450px;
     // margin:-120px auto 20px !important;
   }
 }

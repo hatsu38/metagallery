@@ -77,6 +77,26 @@
       <i class="fas fa-code"></i>
       <h1>Metagallery</h1>
     </header>
+
+    <div id="fixed_header">
+      <div class="header_text_block">
+        <i class="fas fa-columns"></i>
+        <i class="far fa-square"></i>
+        <h2>Metagallery</h2>
+        <i class="fas fa-search form_to_appear"></i>
+      </div>
+      <div class="service_search_form_block">
+        <div class="service_search_form_cover">
+          <i class="fas fa-search form_to_close"></i>
+          <form id="service_search_form" action="/" onsubmit="document.activeElement.blur();return false;">
+            <input id="service_search_input" type="search" placeholder="キーワード検索">
+            <label for="service_search_input"></label>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
     <%= yield %>
     <footer>
       <h2>シェアする</h2>

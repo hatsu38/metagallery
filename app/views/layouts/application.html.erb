@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= analytics_init if Rails.env.production? %>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PBLHZ26');</script>
+    <!-- End Google Tag Manager -->
     <title>サイトのMetaTag一覧 | メタギャラリー</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width">
@@ -69,10 +75,14 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0&#45;rc.2/js/materialize.min.js"></script> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <link rel="manifest" href="/manifest.json" />
-<meta name="apple-mobile-web-app-capable" content="yes"></head>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes"></head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBLHZ26"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
       <i class="fas fa-code"></i>
       <h1>Metagallery</h1>

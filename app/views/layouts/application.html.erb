@@ -77,6 +77,7 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes"></head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
 
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -175,6 +176,11 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 $(function(){
   $(document).ready(function(){
     $('.modal').modal();
+    $('.lazy').lazyload({
+      effect: 'fadeIn',
+      effectspeed: 100,
+      threshold :2100,
+    });
   });
 
   $("#contact_form .validate_input").on("keydown keyup keypress change", function() {

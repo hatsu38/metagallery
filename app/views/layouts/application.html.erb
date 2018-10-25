@@ -69,8 +69,9 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0&#45;rc.2/js/materialize.min.js"></script> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <link rel="manifest" href="/manifest.json" />
-<meta name="apple-mobile-web-app-capable" content="yes"></head>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes"></head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
 
   <body>
     <header>
@@ -165,6 +166,11 @@
 $(function(){
   $(document).ready(function(){
     $('.modal').modal();
+    $('.lazy').lazyload({
+      effect: 'fadeIn',
+      effectspeed: 100,
+      threshold :2100,
+    });
   });
 
   $("#contact_form .validate_input").on("keydown keyup keypress change", function() {

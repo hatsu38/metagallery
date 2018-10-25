@@ -3,6 +3,7 @@ class ServiceController < ApplicationController
 
   def index
     @services = Service.all.order("created_at DESC")
+    @harf = Service.count / 2
     keyword_ary_top10 = ServiceKeyword.group(:keyword_id).order("count_all desc").limit(10).count
     @keywords = []
     keyword_ary_top10.each do |keyword|

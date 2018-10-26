@@ -59,7 +59,7 @@
         <div class="service_block">
           <div class="card">
             <div class="thumbnail card-image">
-              <% if i < 6 || (i >=@harf && i < @harf + 6) %>
+              <% if i >=@harf && i < (@harf * 2)-13 %>
                 <img src="<%= service.ogpimg %>" class="ogp_img">
               <% else %>
                 <img src="loading.gif" data-original="<%= service.ogpimg %>" class="ogp_img lazy">
